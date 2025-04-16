@@ -7,7 +7,7 @@
                            http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
 
 <!-- Commented for now import resource="applicationContext-properties.xml" /> -->
-    <!-- For Heroku Postgres
+    <!-- For Heroku Postgres -->
     <bean class="java.net.URI" id="dbUrl">
         <constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
     </bean>
@@ -24,9 +24,9 @@
         <property name="idleConnectionTestPeriod" value="${hibernate.c3p0.idleConnectionTestPeriod}"></property>
         <property name="maxIdleTime" value="${hibernate.c3p0.maxIdleTime}"></property>
         <property name="checkoutTimeout" value="${hibernate.c3p0.checkoutTimeout}"></property>
-    </bean> -->
+    </bean>
 
-    <!-- Configuring the data source bean for the entire system -->
+    <!-- Configuring the data source bean for the entire system
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="${jdbc.driverClassName}"/>
         <property name="jdbcUrl" value="${jdbc.url}"/>
@@ -39,7 +39,7 @@
         <property name="idleConnectionTestPeriod" value="${hibernate.c3p0.idleConnectionTestPeriod}"></property>
         <property name="maxIdleTime" value="${hibernate.c3p0.maxIdleTime}"></property>
         <property name="checkoutTimeout" value="${hibernate.c3p0.checkoutTimeout}"></property>
-    </bean>
+    </bean> -->
 
     <bean id="dataSourceInitializer" class="org.springframework.jdbc.datasource.init.DataSourceInitializer">
         <property name="dataSource" ref="dataSource"/>
