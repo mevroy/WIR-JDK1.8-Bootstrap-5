@@ -1,0 +1,1 @@
+web: java -jar app/target/dependency/webapp-runner.jar --port $PORT --path /app app/target/app-0.1.0.war
